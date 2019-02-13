@@ -1,0 +1,58 @@
+from microbit import *
+
+    #Loop Start
+while True:
+
+#This is for random number values of each rock, paper, or scissor
+    import random
+
+#This is the input of the player and the outcomes
+    Player1 = 0
+    
+    if button_a.get_presses():
+        Player1 = 1
+    
+    if button_b.get_presses():
+        Player1 = 2
+    
+    if button_a.get_presses() and button_b.get_presses():
+        Player = 3
+    
+    Player2 = random.randint(1, 3)
+    
+#Outcome Start
+    if Player1 == 1  and Player2 == 1 :
+      print ("Draw try agian!")
+      display.show(Image.ASLEEP)
+
+    if Player1 == 2 and Player2 == 1:
+      print("Player 1 wins")
+      display.show(Image.HAPPY)
+
+    if Player1 == 3 and Player2 == 1:
+      print("Computer wins!")
+      display.show(Image.SKULL)
+
+    if Player1 == 2 and Player2 == 2:
+      print("Draw try again!")
+      display.show(Image.ASLEEP)
+
+    if Player1 == 2 and Player2 == 3:
+      print("Computer wins")
+      display.show(Image.SKULL)
+      
+    if Player1 == 3 and Player2 == 3:
+      print("Draw try again")
+      display.show(Image.ASLEEP)
+      
+    if Player1 == 1 and Player2 == 2:
+      print ("Computer wins")
+      display.show(Image.SKULL)
+      
+    if Player1 == 1 and Player2 == 3:
+      print ("Player 1 wins")
+      display.show(Image.HAPPY)
+        
+    if Player1 == 3 and Player2 == 2:
+      print("Player 1 wins")  
+      display.show(Image.HAPPY)
