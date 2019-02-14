@@ -1,0 +1,26 @@
+from microbit import *
+
+while True:
+    
+    display.show(Image.SNAKE)
+  
+    if button_a.get_presses():
+        display.show(Image.HAPPY)
+        sleep(500)
+        display.show(Image.SNAKE)
+    
+    if button_b.get_presses():
+        display.show(Image.SILLY)
+        sleep(500)
+        display.show(Image.SNAKE)
+     
+    if button_a.get_presses() and button_b.get_presses():
+        display.show(Image.SKULL)
+        display.scroll("Lose")
+     
+        while True:
+            display.scroll("LOSER. Press A to restart.")
+            sleep(5000)
+            if button_a.get_presses():
+                display.scroll("Restarting")
+                break
